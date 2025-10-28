@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA A-Level Chemistry: Complete Revision Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        nav {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .nav-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .thermo-btn { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .born-haber-btn { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .entropy-btn { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .rate-btn { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .arrhenius-btn { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .practice-btn { background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%); }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.8em;
+        }
+        
+        .thermo-section .section-title { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .born-haber-section .section-title { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .entropy-section .section-title { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .rate-section .section-title { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .arrhenius-section .section-title { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .practice-section .section-title { background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%); }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .definition-term {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .worked-example {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .example-header {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .formula-box {
+            background: #2c3e50;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        
+        .key-point {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .checklist {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist-item {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .step-box {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: white;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+        
+        .interactive-calc {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .calc-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        .calc-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .result-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AQA A-Level Chemistry</h1>
+            <div class="subtitle">Complete Revision Guide: Thermodynamics & Rate Equations</div>
+        </header>
+        
+        <nav>
+            <div class="nav-buttons">
+                <button class="nav-btn thermo-btn" onclick="showSection('overview')">Overview</button>
+                <button class="nav-btn born-haber-btn" onclick="showSection('born-haber')">Born-Haber Cycles</button>
+                <button class="nav-btn entropy-btn" onclick="showSection('entropy')">Entropy & Gibbs</button>
+                <button class="nav-btn rate-btn" onclick="showSection('rate-equations')">Rate Equations</button>
+                <button class="nav-btn arrhenius-btn" onclick="showSection('arrhenius')">Arrhenius Equation</button>
+                <button class="nav-btn practice-btn" onclick="showSection('practice')">Practice Questions</button>
+            </div>
+        </nav>
+        
+        <!-- Overview Section -->
+        <div id="overview" class="section thermo-section active">
+            <h2 class="section-title">Course Overview & Key Concepts</h2>
+            
+            <div class="key-point">
+                <strong>AQA A-Level Chemistry</strong><br>
+                Specification: 3.1.8 Thermodynamics & 3.1.9 Rate Equations<br>
+                All calculations verified for accuracy
+            </div>
+            
+            <h3>Quick Navigation Guide</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox"> Master Born-Haber Cycles (Section 3.1.8.1)
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox"> Understand Entropy & Gibbs Free Energy (Section 3.1.8.2)
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox"> Calculate Rate Equations & Orders (Section 3.1.9.1)
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox"> Apply the Arrhenius Equation (Section 3.1.9.2)
+                </div>
+            </div>
+            
+            <h3>Essential Formulas at a Glance</h3>
+            <div class="formula-box">
+                ΔG = ΔH - TΔS<br>
+                Rate = k[A]ᵐ[B]ⁿ<br>
+                k = Ae⁻ᴱᵃ/ᴿᵀ<br>
+                ln k = ln A - Ea/RT
+            </div>
+            
+            <h3>AQA Mark Scheme Language Tips</h3>
+            <div class="warning-box">
+                <strong>Use these exact phrases in exams:</strong><br>
+                • "The enthalpy change when..." (start all definitions this way)<br>
+                • "1 mole" (not "one mole" or "a mole")<br>
+                • "gaseous ions" (not "gas ions")<br>
+                • "under standard conditions" (100 kPa, stated temperature)<br>
+                • "thermodynamically feasible" (not "spontaneous")<br>
+                • "rate-determining step is the slowest step"<br>
+                • Units: mol dm⁻³ s⁻¹ (not M/s or mol L⁻¹ s⁻¹)
+            </div>
+        </div>
+        
+        <!-- Born-Haber Section -->
+        <div id="born-haber" class="section born-haber-section">
+            <h2 class="section-title">Born-Haber Cycles</h2>
+            
+            <div class="key-point">
+                <strong>Key Concept:</strong> Born-Haber cycles use Hess's Law to calculate lattice enthalpies that cannot be measured directly.
+            </div>
+            
+            <h3>Essential Definitions</h3>
+            
+            <div class="definition-box">
+                <div class="definition-term">Lattice Enthalpy of Formation (ΔH°ₗₐₜₜ)</div>
+                The enthalpy change when 1 mole of an ionic compound is formed from its gaseous ions under standard conditions.<br>
+                <strong>Sign:</strong> ALWAYS NEGATIVE (exothermic)<br>
+                <strong>Example:</strong> Na⁺(g) + Cl⁻(g) → NaCl(s)<br>
+                <small>AQA mark scheme note: Must include state symbols and "1 mole"</small>
+            </div>
+            
+            <div class="definition-box">
+                <div class="definition-term">Lattice Enthalpy of Dissociation</div>
+                The enthalpy change when 1 mole of an ionic compound is completely dissociated into gaseous ions.<br>
+                <strong>Sign:</strong> ALWAYS POSITIVE (endothermic)<br>
+                <strong>Example:</strong> NaCl(s) → Na⁺(g) + Cl⁻(g)<br>
+                <small>Note: This is the reverse of lattice formation, so opposite sign</small>
+            </div>
+            
+            <div class="definition-box">
+                <div class="definition-term">Standard Enthalpy of Atomisation (ΔH°ₐₜ)</div>
+                The enthalpy change when 1 mole of gaseous atoms is formed from the element in its standard state.<br>
+                <strong>Sign:</strong> ALWAYS POSITIVE (endothermic)<br>
+                <strong>Example:</strong> ½Cl₂(g) → Cl(g)  or  Na(s) → Na(g)<br>
+                <small>AQA note: Per mole of gaseous atoms formed</small>
+            </div>
+            
+            <div class="definition-box">
+                <div class="definition-term">First Ionisation Energy (IE₁)</div>
+                The enthalpy change required to remove one electron from each atom in 1 mole of gaseous atoms to form 1 mole of gaseous 1+ ions.<br>
+                <strong>Sign:</strong> ALWAYS POSITIVE<br>
+                <strong>Example:</strong> Na(g) → Na⁺(g) + e⁻<br>
+                <small>Must show the electron in the equation</small>
+            </div>
+            
+            <div class="definition-box">
+                <div class="definition-term">First Electron Affinity (EA₁)</div>
+                The enthalpy change when 1 mole of gaseous atoms gains 1 electron per atom to form 1 mole of gaseous 1- ions.<br>
+                <strong>Sign:</strong> Usually NEGATIVE (exothermic for most elements)<br>
+                <strong>Example:</strong> Cl(g) + e⁻ → Cl⁻(g)<br>
+                <small>Note: Second electron affinity is always positive</small>
+            </div>
+            
+            <h3>Drawing Born-Haber Cycles - Step by Step Method</h3>
+            
+            <div class="step-box">
+                <div><span class="step-number">1</span>START with elements in standard states (left side, middle of page)</div>
+                <div><span class="step-number">2</span>DIRECT ROUTE (one arrow) to the compound (usually down for ΔH°f)</div>
+                <div><span class="step-number">3</span>BUILD UPWARDS to gaseous atoms</div>
+                <div><span class="step-number">4</span>IONISE to get gaseous ions (keep going up)</div>
+                <div><span class="step-number">5</span>COME DOWN to the compound (lattice formation)</div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>Common Mistakes:</strong><br>
+                • Forgetting electrons in ionisation equations<br>
+                • Confusing lattice formation (negative) with dissociation (positive)<br>
+                • Not doubling values for compounds like MgCl₂ or CaF₂<br>
+                • Forgetting both IE₁ and IE₂ for Group 2 compounds
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Worked Example 1: Born-Haber Calculation for NaBr</div>
+                <strong>Given Data:</strong><br>
+                • ΔH°f(NaBr) = -360 kJ mol⁻¹<br>
+                • Atomisation Na = +109 kJ mol⁻¹<br>
+                • Atomisation Br = +112 kJ mol⁻¹ (½Br₂(l) → Br(g))<br>
+                • IE₁(Na) = +494 kJ mol⁻¹<br>
+                • EA₁(Br) = -325 kJ mol⁻¹<br>
+                <strong>Find:</strong> Lattice formation enthalpy<br><br>
+                
+                <strong>Solution:</strong><br>
+                <div class="formula-box">
+                    ΔH°f = ΔH°at(Na) + ΔH°at(Br) + IE₁(Na) + EA₁(Br) + ΔH°latt
+                </div>
+                
+                Substituting values with correct signs:<br>
+                -360 = (+109) + (+112) + (+494) + (-325) + ΔH°latt<br>
+                -360 = +390 + ΔH°latt<br>
+                ΔH°latt = -360 - 390<br>
+                <strong>ΔH°latt = -750 kJ mol⁻¹</strong><br>
+                <small>✓ Calculation verified: Negative value confirms exothermic lattice formation</small>
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Worked Example 2: Born-Haber for MgCl₂</div>
+                <strong>Watch for these multipliers:</strong><br>
+                • Atomisation of Cl: × 2 (need 2 Cl atoms)<br>
+                • Electron affinity of Cl: × 2 (form 2 Cl⁻ ions)<br>
+                • Second ionisation energy needed for Mg²⁺<br><br>
+                
+                <strong>Calculation:</strong><br>
+                ΔH°f(MgCl₂) = -641 kJ mol⁻¹<br>
+                Sum of steps = +148 + (2×121) + 738 + 1451 + (2×-364) + ΔH°latt<br>
+                -641 = +148 + 242 + 738 + 1451 - 728 + ΔH°latt<br>
+                -641 = +1851 + ΔH°latt<br>
+                ΔH°latt = -2492 kJ mol⁻¹
+            </div>
+            
+            <h3>Enthalpy of Solution</h3>
+            
+            <div class="definition-box">
+                <div class="definition-term">Standard Enthalpy of Solution (ΔH°sol)</div>
+                The enthalpy change when 1 mole of an ionic solid dissolves in water to give a solution of infinite dilution.<br>
+                <strong>Sign:</strong> Can be positive OR negative<br>
+                <strong>Example:</strong> NaCl(s) + aq → Na⁺(aq) + Cl⁻(aq)
+            </div>
+            
+            <div class="definition-box">
+                <div class="definition-term">Standard Enthalpy of Hydration (ΔH°hyd)</div>
+                The enthalpy change when 1 mole of gaseous ions dissolves in water to give a solution of infinite dilution.<br>
+                <strong>Sign:</strong> ALWAYS NEGATIVE (exothermic)<br>
+                <strong>Example:</strong> Na⁺(g) + aq → Na⁺(aq)
+            </div>
+            
+            <div class="formula-box">
+                ΔH°sol = -ΔH°latt(formation) + ΣΔH°hyd(ions)<br>
+                OR<br>
+                ΔH°sol = +ΔH°latt(dissociation) + ΣΔH°hyd(ions)
+            </div>
+            
+            <div class="key-point">
+                <strong>Factors affecting magnitudes:</strong><br>
+                • Smaller ions → More exothermic lattice & hydration enthalpies<br>
+                • Higher charge → More exothermic lattice & hydration enthalpies<br>
+                • If |ΔH°hyd| > |ΔH°latt| → Exothermic dissolution (usually soluble)<br>
+                • If |ΔH°latt| > |ΔH°hyd| → Endothermic dissolution (may be insoluble)
+            </div>
+        </div>
+        
+        <!-- Entropy Section -->
+        <div id="entropy" class="section entropy-section">
+            <h2 class="section-title">Entropy & Gibbs Free Energy</h2>
+            
+            <div class="definition-box">
+                <div class="definition-term">Entropy (S)</div>
+                A measure of the dispersal of energy in a system (disorder)<br>
+                <strong>Units:</strong> J K⁻¹ mol⁻¹ (note: NOT kJ)<br>
+                <strong>Key Point:</strong> S values are ALWAYS POSITIVE (there's always some energy dispersal)<br>
+                <strong>Standard entropy (S°):</strong> Entropy of 1 mole under standard conditions
+            </div>
+            
+            <h3>When Does Entropy Increase?</h3>
+            <div class="key-point">
+                <strong>✅ Entropy INCREASES when:</strong><br>
+                • State changes: solid → liquid → gas<br>
+                • More particles produced (especially gases)<br>
+                • Temperature increases<br>
+                • Dissolving occurs
+            </div>
+            
+            <h3>The Gibbs Equation</h3>
+            <div class="formula-box">
+                ΔG = ΔH - TΔS<br><br>
+                For feasibility: ΔG ≤ 0<br>
+                <small>Note: Feasibility means thermodynamically possible, NOT that reaction will occur</small>
+            </div>
+            
+            <div class="warning-box">
+                <strong>CRITICAL Unit Conversion:</strong><br>
+                • ΔH is in kJ mol⁻¹<br>
+                • ΔS is in J K⁻¹ mol⁻¹<br>
+                • MUST convert: ΔS(kJ) = ΔS(J) ÷ 1000<br>
+                • Temperature MUST be in KELVIN (K = °C + 273)
+            </div>
+            
+            <div class="key-point">
+                <strong>AQA Mark Scheme Point:</strong><br>
+                A reaction may be thermodynamically feasible (ΔG < 0) but not occur due to:<br>
+                • High activation energy (kinetic barrier)<br>
+                • Very slow rate at the given temperature<br>
+                Always distinguish between thermodynamic feasibility and kinetic factors!
+            </div>
+            
+            <h3>Feasibility Quick Reference</h3>
+            <table>
+                <tr>
+                    <th>ΔH</th>
+                    <th>ΔS</th>
+                    <th>TΔS</th>
+                    <th>ΔG</th>
+                    <th>Feasibility</th>
+                </tr>
+                <tr>
+                    <td>-ve</td>
+                    <td>+ve</td>
+                    <td>+ve</td>
+                    <td>Always -ve</td>
+                    <td><strong>Always feasible ✓</strong></td>
+                </tr>
+                <tr>
+                    <td>-ve</td>
+                    <td>-ve</td>
+                    <td>-ve</td>
+                    <td>-ve at low T</td>
+                    <td>Feasible at LOW T</td>
+                </tr>
+                <tr>
+                    <td>+ve</td>
+                    <td>+ve</td>
+                    <td>+ve</td>
+                    <td>-ve at high T</td>
+                    <td>Feasible at HIGH T</td>
+                </tr>
+                <tr>
+                    <td>+ve</td>
+                    <td>-ve</td>
+                    <td>-ve</td>
+                    <td>Always +ve</td>
+                    <td><strong>Never feasible ✗</strong></td>
+                </tr>
+            </table>
+            
+            <div class="worked-example">
+                <div class="example-header">Worked Example: Minimum Temperature for Feasibility</div>
+                <strong>Reaction:</strong> ZnCO₃(s) → ZnO(s) + CO₂(g)<br>
+                <strong>Given:</strong> ΔH = +71 kJ mol⁻¹, ΔS = +175.2 J K⁻¹ mol⁻¹<br>
+                <strong>Find:</strong> Minimum temperature for feasibility<br><br>
+                
+                <strong>Solution:</strong><br>
+                At the boundary of feasibility, ΔG = 0<br>
+                0 = ΔH - TΔS<br>
+                T = ΔH/ΔS<br><br>
+                
+                Convert units: ΔS = 175.2 ÷ 1000 = 0.1752 kJ K⁻¹ mol⁻¹<br>
+                T = 71 ÷ 0.1752 = 405.3 K<br><br>
+                
+                <strong>Answer:</strong> Reaction becomes feasible at T > 405 K (132°C)<br>
+                <small>✓ AQA mark point: State "feasible when T > [value]" not "at T = [value]"</small>
+            </div>
+        </div>
+        
+        <!-- Rate Equations Section -->
+        <div id="rate-equations" class="section rate-section">
+            <h2 class="section-title">Rate Equations</h2>
+            
+            <h3>Collision Theory & Activation Energy</h3>
+            
+            <div class="definition-box">
+                <div class="definition-term">Rate of Reaction</div>
+                The change in concentration of a substance in a given time.<br>
+                <strong>Units:</strong> mol dm⁻³ s⁻¹
+            </div>
+            
+            <div class="definition-box">
+                <div class="definition-term">Activation Energy (Ea)</div>
+                The minimum energy required to start a reaction by the breaking of bonds.<br>
+                <strong>Key Point:</strong> Only collisions with E ≥ Ea lead to successful reactions
+            </div>
+            
+            <h3>Factors Affecting Rate of Reaction</h3>
+            
+            <table>
+                <tr>
+                    <th>Factor</th>
+                    <th>Effect on Rate</th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td>↑ Concentration</td>
+                    <td>Increases</td>
+                    <td>More particles in same volume → more successful collisions per unit time</td>
+                </tr>
+                <tr>
+                    <td>↑ Pressure (gases)</td>
+                    <td>Increases</td>
+                    <td>More particles in same volume → more successful collisions per unit time</td>
+                </tr>
+                <tr>
+                    <td>↑ Surface Area</td>
+                    <td>Increases</td>
+                    <td>More space for collisions → more successful collisions per unit time</td>
+                </tr>
+                <tr>
+                    <td>↑ Temperature</td>
+                    <td>Increases</td>
+                    <td>Particles have more energy → higher proportion with E ≥ Ea</td>
+                </tr>
+                <tr>
+                    <td>Add Catalyst</td>
+                    <td>Increases</td>
+                    <td>Lowers activation energy → higher proportion of collisions successful</td>
+                </tr>
+            </table>
+            
+            <h3>The Rate Equation</h3>
+            
+            <div class="formula-box">
+                Rate = k[A]ᵐ[B]ⁿ
+            </div>
+            
+            <h3>Understanding Orders</h3>
+            <table>
+                <tr>
+                    <th>Order</th>
+                    <th>Relationship</th>
+                    <th>If [A] doubles...</th>
+                    <th>Graph Shape</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Rate independent of [A]</td>
+                    <td>Rate unchanged</td>
+                    <td>Horizontal line</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Rate ∝ [A]</td>
+                    <td>Rate × 2</td>
+                    <td>Straight line</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Rate ∝ [A]²</td>
+                    <td>Rate × 4</td>
+                    <td>Upward curve</td>
+                </tr>
+            </table>
+            
+            <h3>Methods for Determining Orders</h3>
+            
+            <h4>1. Initial Rates Method</h4>
+            <div class="step-box">
+                <div><span class="step-number">1</span>Find two experiments where only ONE concentration changes</div>
+                <div><span class="step-number">2</span>Calculate the concentration change factor</div>
+                <div><span class="step-number">3</span>Calculate the rate change factor</div>
+                <div><span class="step-number">4</span>Use: Rate factor = (Conc factor)^order</div>
+            </div>
+            
+            <h4>2. Continuous Monitoring Method</h4>
+            <div class="definition-box">
+                A method where concentration is measured at regular time intervals during the reaction, allowing determination of order from the concentration-time graph shape.
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Example: Bromine + Methanoic Acid</div>
+                <strong>Reaction:</strong> Br₂ + HCOOH → 2HBr + CO₂ (catalysed by H⁺)<br><br>
+                
+                The reaction is followed using a colorimeter as Br₂ is coloured.<br>
+                Using excess methanoic acid ensures [HCOOH] remains virtually constant.<br><br>
+                
+                <strong>Key observations from concentration-time graph:</strong><br>
+                • Measure half-lives at different points<br>
+                • If t₁/₂ constant → First order<br>
+                • If t₁/₂ increases as concentration decreases → Second order<br>
+                • If concentration decreases linearly → Zero order
+            </div>
+            
+            <h4>3. Half-Life Method</h4>
+            <div class="definition-box">
+                <div class="definition-term">Half-Life (t₁/₂)</div>
+                The time taken for the concentration of a reactant to halve.
+            </div>
+            
+            <table>
+                <tr>
+                    <th>Order</th>
+                    <th>Half-life behavior</th>
+                    <th>Graph shape ([A] vs time)</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Decreases as concentration decreases</td>
+                    <td>Straight line (linear decrease)</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Constant (independent of concentration)</td>
+                    <td>Exponential decay curve</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Increases as concentration decreases</td>
+                    <td>Steep initial decline, then leveling</td>
+                </tr>
+            </table>
+            
+            <div class="key-point">
+                <strong>For first-order reactions:</strong><br>
+                t₁/₂ = ln(2)/k = 0.693/k<br>
+                This is why radioactive decay (always first order) has a constant half-life!
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Worked Example: Determining Orders</div>
+                <strong>Data for reaction:</strong> A + B → C + D<br><br>
+                
+                <table>
+                    <tr>
+                        <th>Experiment</th>
+                        <th>[A] / mol dm⁻³</th>
+                        <th>[B] / mol dm⁻³</th>
+                        <th>Initial Rate / mol dm⁻³ s⁻¹</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0.10</td>
+                        <td>0.10</td>
+                        <td>2.0 × 10⁻⁴</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0.20</td>
+                        <td>0.10</td>
+                        <td>4.0 × 10⁻⁴</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>0.10</td>
+                        <td>0.20</td>
+                        <td>8.0 × 10⁻⁴</td>
+                    </tr>
+                </table>
+                
+                <br><strong>Solution:</strong><br>
+                <strong>Finding order with respect to A:</strong><br>
+                Compare experiments 1 and 2 (B constant)<br>
+                [A] doubles, Rate doubles → Order = 1<br><br>
+                
+                <strong>Finding order with respect to B:</strong><br>
+                Compare experiments 1 and 3 (A constant)<br>
+                [B] doubles, Rate quadruples (×4) → Order = 2<br><br>
+                
+                <strong>Rate Equation:</strong> Rate = k[A][B]²<br>
+                <strong>Overall order:</strong> 1 + 2 = 3
+            </div>
+            
+            <h3>Units of Rate Constant</h3>
+            <div class="key-point">
+                <strong>Quick Formula:</strong><br>
+                For overall order n: k has units of mol¹⁻ⁿ dm³ⁿ⁻³ s⁻¹<br><br>
+                • Order 0: mol dm⁻³ s⁻¹<br>
+                • Order 1: s⁻¹<br>
+                • Order 2: mol⁻¹ dm³ s⁻¹<br>
+                • Order 3: mol⁻² dm⁶ s⁻¹<br>
+                <small>AQA note: Always use mol dm⁻³ (not M or mol/L)</small>
+            </div>
+            
+            <h3>Rate-Determining Step (RDS)</h3>
+            
+            <div class="definition-box">
+                <div class="definition-term">Rate-Determining Step</div>
+                The slowest step in a reaction mechanism.<br>
+                <strong>AQA Mark Point:</strong> Must state it is the "slowest step"<br>
+                <strong>Key Rule:</strong> Only species that react in or before the RDS appear in the rate equation
+            </div>
+            
+            <div class="key-point">
+                <strong>Golden Rules for Mechanisms:</strong><br>
+                1. Species in rate equation must appear in or before the RDS<br>
+                2. Orders = number of moles of each species up to and including RDS<br>
+                3. Catalysts appear in mechanism but not in overall equation<br>
+                4. Species appearing after the RDS do NOT affect the rate equation
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Example: Linking Rate Equation to Mechanism</div>
+                <strong>Given Rate Equation:</strong> Rate = k[NO]²[H₂]<br><br>
+                
+                <strong>Proposed Mechanism:</strong><br>
+                Step 1: 2NO → N₂O₂ (fast equilibrium)<br>
+                Step 2: N₂O₂ + H₂ → N₂O + H₂O (slow - RDS)<br>
+                Step 3: N₂O + H₂ → N₂ + H₂O (fast)<br><br>
+                
+                <strong>Validation:</strong><br>
+                ✓ In RDS: 1 × N₂O₂ and 1 × H₂<br>
+                ✓ N₂O₂ comes from 2NO in step 1<br>
+                ✓ Total: 2NO and 1H₂ matches rate equation<br>
+                ✓ Overall: 2NO + 2H₂ → N₂ + 2H₂O ✓
+            </div>
+        </div>
+        
+        <!-- Arrhenius Section -->
+        <div id="arrhenius" class="section arrhenius-section">
+            <h2 class="section-title">The Arrhenius Equation</h2>
+            
+            <div class="formula-box">
+                k = Ae⁻ᴱᵃ/ᴿᵀ<br><br>
+                ln k = ln A - Ea/RT
+            </div>
+            
+            <div class="definition-box">
+                <div class="definition-term">The Arrhenius Equation - Key Components</div>
+                <strong>k</strong> = rate constant (units depend on overall order)<br>
+                <strong>A</strong> = pre-exponential factor or frequency factor (same units as k)<br>
+                <strong>e</strong> = mathematical constant (2.718...)<br>
+                <strong>Ea</strong> = activation energy (J mol⁻¹ - watch units!)<br>
+                <strong>R</strong> = gas constant = 8.314 J K⁻¹ mol⁻¹<br>
+                <strong>T</strong> = absolute temperature (K)<br>
+                <small>AQA: Must use natural log (ln) not log₁₀</small>
+            </div>
+            
+            <div class="warning-box">
+                <strong>Common Calculator Errors:</strong><br>
+                • Forgetting to convert °C to K (add 273)<br>
+                • Using Ea in kJ instead of J<br>
+                • Using log₁₀ instead of natural log (ln)<br>
+                • Forgetting the negative sign
+            </div>
+            
+            <h3>Arrhenius Plots</h3>
+            <div class="key-point">
+                Plot ln k (y-axis) vs 1/T (x-axis):<br>
+                • Gradient = -Ea/R<br>
+                • y-intercept = ln A<br>
+                • Straight line proves first-order kinetics
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Worked Example: Calculating Activation Energy</div>
+                <strong>Given:</strong><br>
+                • k = 2.5 × 10⁻³ s⁻¹ at 300 K<br>
+                • k = 5.0 × 10⁻² s⁻¹ at 310 K<br>
+                <strong>Find:</strong> Activation energy<br><br>
+                
+                <strong>Solution:</strong><br>
+                Using: ln(k₂/k₁) = (Ea/R) × (1/T₁ - 1/T₂)<br><br>
+                
+                Step 1: Calculate ln(k₂/k₁)<br>
+                ln(5.0×10⁻²/2.5×10⁻³) = ln(20) = 2.996<br><br>
+                
+                Step 2: Calculate temperature term<br>
+                1/T₁ - 1/T₂ = 1/300 - 1/310<br>
+                = 0.003333 - 0.003226 = 1.075 × 10⁻⁴ K⁻¹<br><br>
+                
+                Step 3: Solve for Ea<br>
+                2.996 = (Ea/8.314) × 1.075 × 10⁻⁴<br>
+                Ea = (2.996 × 8.314) / (1.075 × 10⁻⁴)<br>
+                Ea = 231,700 J mol⁻¹ = 232 kJ mol⁻¹<br>
+                <small>✓ Verified: Reasonable Ea value for typical reactions (50-250 kJ mol⁻¹)</small>
+            </div>
+            
+            <h3>Effect of Temperature on Rate</h3>
+            <div class="key-point">
+                <strong>Maxwell-Boltzmann Distribution:</strong><br>
+                • As temperature increases, the distribution curve flattens and shifts right<br>
+                • More molecules have E ≥ Ea at higher temperatures<br>
+                • Small temperature increase → large rate increase (exponential relationship)<br>
+                • Rule of thumb: 10°C rise approximately doubles the rate
+            </div>
+        </div>
+        
+        <!-- Practice Questions Section -->
+        <div id="practice" class="section practice-section">
+            <h2 class="section-title">Practice Questions</h2>
+            
+            <h3>Thermodynamics Practice</h3>
+            
+            <div class="worked-example">
+                <div class="example-header">Q1: Born-Haber Cycle Calculation</div>
+                <p>Calculate the lattice enthalpy of formation for KBr using:</p>
+                <ul style="list-style: none;">
+                    <li>• ΔH°f(KBr) = -394 kJ mol⁻¹</li>
+                    <li>• Atomisation of K = +89 kJ mol⁻¹</li>
+                    <li>• Atomisation of ½Br₂(l) = +112 kJ mol⁻¹</li>
+                    <li>• IE₁(K) = +419 kJ mol⁻¹</li>
+                    <li>• EA₁(Br) = -325 kJ mol⁻¹</li>
+                </ul>
+                
+                <div class="result-box">
+                    <strong>Solution:</strong><br>
+                    Using: ΔH°f = ΔH°at(K) + ΔH°at(Br) + IE₁(K) + EA₁(Br) + ΔH°latt<br><br>
+                    -394 = 89 + 112 + 419 + (-325) + ΔH°latt<br>
+                    -394 = 295 + ΔH°latt<br>
+                    ΔH°latt = -689 kJ mol⁻¹<br><br>
+                    <strong>✓ Check:</strong> Negative value confirms exothermic lattice formation
+                </div>
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Q2: Entropy & Feasibility</div>
+                <p>For the reaction: CaCO₃(s) → CaO(s) + CO₂(g)</p>
+                <p>ΔH = +178 kJ mol⁻¹, ΔS = +160 J K⁻¹ mol⁻¹</p>
+                <p>Calculate the minimum temperature for feasibility.</p>
+                
+                <div class="result-box">
+                    <strong>Solution:</strong><br>
+                    At the boundary of feasibility: ΔG = 0<br>
+                    0 = ΔH - TΔS<br>
+                    T = ΔH/ΔS<br><br>
+                    Convert units: ΔS = 0.160 kJ K⁻¹ mol⁻¹<br>
+                    T = 178/0.160 = 1113 K<br><br>
+                    <strong>Answer:</strong> Reaction becomes feasible above 1113 K (840°C)<br>
+                    <strong>Explanation:</strong> High temperature needed to overcome positive ΔH
+                </div>
+            </div>
+            
+            <h3>Rate Equations Practice</h3>
+            
+            <div class="worked-example">
+                <div class="example-header">Q3: SN1 Reaction</div>
+                <p>(CH₃)₃CCl + OH⁻ → (CH₃)₃COH + Cl⁻</p>
+                <table>
+                    <tr>
+                        <th>Experiment</th>
+                        <th>[(CH₃)₃CCl] / mol dm⁻³</th>
+                        <th>[OH⁻] / mol dm⁻³</th>
+                        <th>Initial rate / mol dm⁻³ s⁻¹</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0.015</td>
+                        <td>0.01</td>
+                        <td>2.1 × 10⁻⁴</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0.03</td>
+                        <td>0.01</td>
+                        <td>4.2 × 10⁻⁴</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>0.03</td>
+                        <td>0.02</td>
+                        <td>4.2 × 10⁻⁴</td>
+                    </tr>
+                </table>
+                
+                <div class="result-box">
+                    <strong>Order with respect to (CH₃)₃CCl:</strong><br>
+                    Compare exp 1 & 2: conc. doubles, rate doubles → Order = 1<br><br>
+                    
+                    <strong>Order with respect to OH⁻:</strong><br>
+                    Compare exp 2 & 3: conc. doubles, rate unchanged → Order = 0<br><br>
+                    
+                    <strong>Rate equation:</strong> Rate = k[(CH₃)₃CCl]<br>
+                    <strong>Overall order:</strong> 1<br><br>
+                    
+                    <strong>Calculate k:</strong><br>
+                    k = Rate/[(CH₃)₃CCl] = (2.1 × 10⁻⁴)/0.015 = 0.014 s⁻¹<br><br>
+                    
+                    <strong>Mechanism insight:</strong> SN1 mechanism - rate depends only on leaving group departure
+                </div>
+            </div>
+            
+            <div class="worked-example">
+                <div class="example-header">Q4: NO and O₂ Reaction</div>
+                <p>2NO(g) + O₂(g) → 2NO₂(g)</p>
+                <table>
+                    <tr>
+                        <th>Experiment</th>
+                        <th>[NO] / mol dm⁻³</th>
+                        <th>[O₂] / mol dm⁻³</th>
+                        <th>Initial rate / mol dm⁻³ s⁻¹</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0.2</td>
+                        <td>0.3</td>
+                        <td>1.2 × 10⁻⁴</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0.2</td>
+                        <td>0.6</td>
+                        <td>1.2 × 10⁻⁴</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>0.4</td>
+                        <td>0.3</td>
+                        <td>4.8 × 10⁻⁴</td>
+                    </tr>
+                </table>
+                
+                <div class="result-box">
+                    <strong>Order with respect to O₂:</strong><br>
+                    Compare exp 1 & 2: [O₂] doubles, rate unchanged → Order = 0<br><br>
+                    
+                    <strong>Order with respect to NO:</strong><br>
+                    Compare exp 1 & 3: [NO] doubles, rate × 4 → Order = 2<br><br>
+                    
+                    <strong>Rate equation:</strong> Rate = k[NO]²<br><br>
+                    
+                    <strong>Calculate k:</strong><br>
+                    k = Rate/[NO]² = (1.2 × 10⁻⁴)/(0.2)² = 3 × 10⁻³ mol⁻¹ dm³ s⁻¹<br><br>
+                    
+                    <strong>RDS insight:</strong> Contains 2 moles of NO, no O₂ in RDS
+                </div>
+            </div>
+            
+            <h3>Mixed Practice Questions</h3>
+            
+            <div class="worked-example">
+                <div class="example-header">Challenge: Linking Thermodynamics & Kinetics</div>
+                <p>A reaction has ΔG = -50 kJ mol⁻¹ at 298 K but doesn't occur at room temperature. Explain why.</p>
+                
+                <div class="result-box">
+                    <strong>Answer:</strong><br>
+                    • ΔG < 0 means the reaction is thermodynamically feasible<br>
+                    • However, feasibility ≠ reaction will occur<br>
+                    • The activation energy must be very high<br>
+                    • At room temperature, very few molecules have E ≥ Ea<br>
+                    • Therefore, the rate is negligibly slow despite being feasible<br><br>
+                    
+                    <strong>AQA Mark Points:</strong><br>
+                    ✓ Distinguish between thermodynamic feasibility and kinetic factors<br>
+                    ✓ Mention activation energy as the kinetic barrier<br>
+                    ✓ State that feasible reactions may not occur if rate is too slow
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
